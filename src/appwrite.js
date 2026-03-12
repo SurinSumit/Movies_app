@@ -30,7 +30,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
         searchTerm,
         count: 1,
         movie_id: String(movie.id),
-        poster_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+        poster_url: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/no-movie.png',
       })
     }
   } catch (error) {
